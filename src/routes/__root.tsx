@@ -1,6 +1,12 @@
 import {
-  Box,
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from '@clerk/clerk-react'
+import {
   CssBaseline,
+  Stack,
   Tabs,
   ThemeProvider,
   createTheme,
@@ -24,9 +30,23 @@ function RootComponent() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Box sx={{ padding: '1em' }}>
+      <Stack
+        component="header"
+        direction="row"
+        sx={{
+          padding: '1em',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}
+      >
         <NavTabs />
-      </Box>
+        <SignedOut>
+          <SignInButton />
+        </SignedOut>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
+      </Stack>
       <hr />
       <Outlet />
       <TanStackRouterDevtools position="bottom-right" />
