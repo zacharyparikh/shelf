@@ -56,7 +56,10 @@ function RootComponent() {
 
 function NavTabs() {
   const matchRoute = useMatchRoute()
-  const links = [linkOptions({ to: '/', label: 'Home' })]
+  const links = [
+    linkOptions({ to: '/', label: 'Home' }),
+    linkOptions({ to: '/about', label: 'About' }),
+  ]
   const currentTab = links.find(({ to }) => matchRoute({ to }))?.to
   return (
     <Tabs value={currentTab}>

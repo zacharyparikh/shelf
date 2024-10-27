@@ -1,14 +1,19 @@
 import { TanStackRouterVite } from '@tanstack/router-plugin/vite'
 import react from '@vitejs/plugin-react'
-import path from 'node:path'
+import { join } from 'node:path'
 import { defineConfig } from 'vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  root: join(import.meta.dirname, 'src/client'),
   plugins: [TanStackRouterVite({}), react()],
+  build: {
+    emptyOutDir: true,
+    outDir: join(import.meta.dirname, 'dist/client'),
+  },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src'),
+      client: join(import.meta.dirname, 'src/client'),
     },
   },
 })

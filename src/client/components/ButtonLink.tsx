@@ -1,6 +1,6 @@
-import { mergeSx } from '@/utils/mergeSx'
-import { Button, ButtonProps } from '@mui/material'
-import { LinkComponent, createLink } from '@tanstack/react-router'
+import { Button, type ButtonProps } from '@mui/material'
+import { type LinkComponent, createLink } from '@tanstack/react-router'
+import { mergeSx } from 'client/utils/mergeSx'
 import * as React from 'react'
 
 interface MUILinkProps extends Omit<ButtonProps, 'href'> {

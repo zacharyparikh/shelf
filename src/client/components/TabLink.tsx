@@ -1,6 +1,6 @@
-import { mergeSx } from '@/utils/mergeSx'
-import { Tab, TabProps } from '@mui/material'
-import { LinkComponent, createLink } from '@tanstack/react-router'
+import { Tab, type TabProps } from '@mui/material'
+import { type LinkComponent, createLink } from '@tanstack/react-router'
+import { mergeSx } from 'client/utils/mergeSx'
 import * as React from 'react'
 
 interface MUILinkProps extends Omit<TabProps, 'href'> {
